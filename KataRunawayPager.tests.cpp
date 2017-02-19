@@ -21,3 +21,9 @@ TEST(EncodeMessageTest, ItShouldCapitalizeAllLetters)
 	string result = KataRunawayPager::EncodeMessage("sAnDwHiCh");
 	EXPECT_EQ(result, "SANDWHICH");
 }
+
+TEST(EncodeMessageTest, ItShouldEncodeRepeatedLettersAsASingleLetterFollowedByNumberOfOccurences)
+{
+	string result = KataRunawayPager::EncodeMessage("AABZZZZQQJSHAZBOTBQQRRRRRRZBBBQTTTTTTF");
+	EXPECT_EQ(result, "A2BZ4Q2JSHAZBOTBQ2R6ZB3QT6F");
+}
