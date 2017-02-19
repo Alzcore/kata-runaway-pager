@@ -15,3 +15,9 @@ TEST(EncodeMessageTest, ItShouldRemoveSpaces)
 	string result = KataRunawayPager::EncodeMessage("C A T");
 	EXPECT_EQ(result, "CAT");
 }
+
+TEST(EncodeMessageTest, ItShouldOnlyContainLetters)
+{
+	string result = KataRunawayPager::EncodeMessage("123A2&%',");
+	EXPECT_EQ(result, "A");
+}
