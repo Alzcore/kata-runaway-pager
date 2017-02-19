@@ -4,12 +4,6 @@
 
 using namespace std;
 
-TEST(EncodeMessageTest, ItShouldReturnAString)
-{
-	string result = KataRunawayPager::EncodeMessage("message");
-	EXPECT_EQ(result, "message");
-}
-
 TEST(EncodeMessageTest, ItShouldRemoveSpaces)
 {
 	string result = KataRunawayPager::EncodeMessage("C A T");
@@ -20,4 +14,10 @@ TEST(EncodeMessageTest, ItShouldOnlyContainLetters)
 {
 	string result = KataRunawayPager::EncodeMessage("123A2&%',");
 	EXPECT_EQ(result, "A");
+}
+
+TEST(EncodeMessageTest, ItShouldCapitalizeAllLetters)
+{
+	string result = KataRunawayPager::EncodeMessage("sAnDwHiCh");
+	EXPECT_EQ(result, "SANDWHICH");
 }
