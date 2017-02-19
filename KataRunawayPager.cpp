@@ -5,5 +5,11 @@
 
 string KataRunawayPager::EncodeMessage(string InMessage)
 {
-	return regex_replace(InMessage, regex("[^A-Za-z]"), "");
+	return CleanMessage(InMessage);
+}
+
+string KataRunawayPager::CleanMessage(string Message)
+{
+	transform(Message.begin(), Message.end(), Message.begin(), ::toupper);
+	return regex_replace(Message, regex("[^A-Z]"), "");
 }
