@@ -1,14 +1,17 @@
 #include "gtest/gtest.h"
+#include <string>
 #include "KataRunawayPager.h"
+
+using namespace std;
 
 TEST(EncodeMessageTest, ItShouldReturnAString)
 {
-	const char* result = KataRunawayPager::EncodeMessage("message");
+	string result = KataRunawayPager::EncodeMessage("message");
 	EXPECT_EQ(result, "message");
 }
 
 TEST(EncodeMessageTest, ItShouldRemoveSpaces)
 {
-	const char* result = KataRunawayPager::EncodeMessage("C A T");
+	string result = KataRunawayPager::EncodeMessage("C A T");
 	EXPECT_EQ(result, "CAT");
 }

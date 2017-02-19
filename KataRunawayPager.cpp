@@ -1,7 +1,10 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 #include "KataRunawayPager.h"
 
-const char* KataRunawayPager::EncodeMessage(const char* InMessage)
+string KataRunawayPager::EncodeMessage(string InMessage)
 {
+	InMessage.erase(std::remove(InMessage.begin(), InMessage.end(), ' '), InMessage.end());
 	return InMessage;
 }

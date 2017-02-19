@@ -1,6 +1,8 @@
 #pragma once
+#include <string>
+using namespace std;
 
 class KataRunawayPager {
 public:
-	static const char* EncodeMessage(const char* InMessage);
+	static string EncodeMessage(string InMessage);
 };
